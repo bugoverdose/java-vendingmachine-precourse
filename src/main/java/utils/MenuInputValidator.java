@@ -31,7 +31,7 @@ public class MenuInputValidator {
 
     private static void validatePriceInput(String priceInput) {
         validateIntInput(priceInput);
-        int price = Integer.parseInt(priceInput);
+        validateMinimumPrice(Integer.parseInt(priceInput));
     }
 
     private static void validateStockInput(String stockInput) {
