@@ -15,6 +15,7 @@ public class MenuInputValidator {
     }
 
     private static void validateProductInput(String productInfo) {
+        validateBrackets(productInfo);
         productInfo = productInfo.substring(1, productInfo.length()-1);
 
         String[] infos = productInfo.split(COMMA);
@@ -22,6 +23,12 @@ public class MenuInputValidator {
         validateUniqueProductName(infos[NAME_IDX]);
         validatePriceInput(infos[PRICE_IDX]);
         validateStockInput(infos[STOCK_IDX]);
+    }
+
+    private static void validateBrackets(String input) {
+        if (input.startsWith("[") || input.endsWith("]")) {
+            throw new IllegalArgumentException(NO_BRACKETS_EXCEPTION);
+        }
     }
 
     private static void validateThreeInfos(String[] infos) {

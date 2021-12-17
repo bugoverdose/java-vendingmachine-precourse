@@ -7,6 +7,7 @@ public class ExceptionMessages {
     public static String NEGATIVE_INT_EXCEPTION = ERROR + "금액은 음수일 수 없습니다.";
     public static String ONE_WON_EXCEPTION = ERROR + "금액으로 1원 단위를 입력할 수 없습니다.";
 
+    public static String NO_BRACKETS_EXCEPTION = ERROR + "개별 상품 정보는 대괄호로 감싸져야 합니다.";
     public static String NOT_THREE_INFO_EXCEPTION = ERROR + "쉼표를 기준으로 상품의 이름, 가격, 수량을 입력해야 합니다.";
 
     public static String DUPLICATE_PRODUCT_NAME_EXCEPTION = ERROR + "중복된 상품명입니다.";
