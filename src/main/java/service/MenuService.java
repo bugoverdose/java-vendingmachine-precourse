@@ -6,7 +6,7 @@ import domain.ProductRepository;
 import static constants.SystemConstant.*;
 import static view.InputView.requestMenuInput;
 
-public class ProductService {
+public class MenuService {
 
     public void initMenu() {
         String menuInput = requestMenuInput();
