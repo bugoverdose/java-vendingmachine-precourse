@@ -9,6 +9,7 @@ import domain.ProductRepository;
 public class MenuInputValidator {
 
     public static void validateMenuInput(String input) {
+        validateRawFormat(input);
         for (String productInfo : input.split(SEMICOLON)) {
             validateProductInput(productInfo);
         }
@@ -23,6 +24,12 @@ public class MenuInputValidator {
         validateUniqueProductName(infos[NAME_IDX]);
         validatePriceInput(infos[PRICE_IDX]);
         validateStockInput(infos[STOCK_IDX]);
+    }
+
+    private static void validateRawFormat(String input) {
+        if (!input.startsWith(BRACKET_LEFT) || !input.endsWith(BRACKET_RIGHT)) {
+            throw new IllegalArgumentException(NO_BRACKETS_EXCEPTION);
+        }
     }
 
     private static void validateBrackets(String input) {
