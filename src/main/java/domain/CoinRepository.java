@@ -1,11 +1,11 @@
 package domain;
 
-import static constants.SystemConstant.*;
 import static utils.RandomCoinGenerator.*;
 
 import java.util.HashMap;
 
 public class CoinRepository {
+
     private static final HashMap<Coin, Integer> coins = new HashMap<>();
 
     public static HashMap<Coin, Integer> getCoins() { return coins; }
