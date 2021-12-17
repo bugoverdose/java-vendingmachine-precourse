@@ -7,10 +7,11 @@ import domain.ProductRepository;
 
 public class PurchaseValidator {
 
-    public static void validatePurchaseInput(String input, int customerMoney) {
+    public static Product returnValidProduct(String input, int customerMoney) {
         Product product = validatePurchaseNameInput(input);
         validateEnoughMoney(product, customerMoney);
         validateEnoughStock(product);
+        return product;
     }
 
     private static Product validatePurchaseNameInput(String input) {

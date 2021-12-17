@@ -1,17 +1,17 @@
 package service;
 
+import static utils.InputValidator.validateIntInput;
+import static utils.PurchaseValidator.*;
+import static view.InputView.*;
+import static view.OutputView.printChanges;
+import static view.OutputView.printCustomerMoneyLeft;
+
 import domain.Coin;
 import domain.CoinRepository;
 import domain.Product;
 import domain.ProductRepository;
 
 import java.util.TreeMap;
-
-import static utils.InputValidator.validateIntInput;
-import static utils.PurchaseValidator.validatePurchaseInput;
-import static view.InputView.*;
-import static view.OutputView.printChanges;
-import static view.OutputView.printCustomerMoneyLeft;
 
 public class CustomerService {
 
@@ -64,9 +64,7 @@ public class CustomerService {
 
     private void sellProduct() {
         String productName = requestCustomerPurchaseInput();
-        validatePurchaseInput(productName, customerMoney);
-
-        Product product = ProductRepository.findProductByName(productName);
+        Product product = returnValidProduct(productName, customerMoney);
         product.decreaseStock();
         customerMoney -= product.getPrice();
     }
