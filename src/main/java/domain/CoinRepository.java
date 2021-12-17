@@ -1,5 +1,8 @@
 package domain;
 
+import static constants.SystemConstant.*;
+import static utils.RandomCoinGenerator.*;
+
 import java.util.HashMap;
 
 public class CoinRepository {
@@ -18,6 +21,11 @@ public class CoinRepository {
     public static void initCoins(int vendingMachineMoney) {
         for (Coin coin : Coin.values()) {
             coins.put(coin, 0);
+        }
+
+        while (vendingMachineMoney > MINIMUM_COIN_AMOUNT) {
+            Coin newCoin = pickRandomNewCoin(vendingMachineMoney);
+            addCoin(newCoin);
         }
     }
 }
