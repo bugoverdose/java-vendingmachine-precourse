@@ -5,6 +5,8 @@ import static constants.OutputMessages.*;
 import domain.Coin;
 import domain.CoinRepository;
 
+import java.util.TreeMap;
+
 public class OutputView {
 
     public static void printVendingMachineCoins() {
@@ -20,5 +22,15 @@ public class OutputView {
 
     public static void printCustomerMoneyLeft(int customerMoney) {
         System.out.println(SHOW_CUSTOMER_MONEY_LEFT(customerMoney));
+    }
+
+    public static void printChanges(TreeMap<Coin, Integer> changes) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(CHANGES);
+        for (Coin coin : changes.keySet()) {
+            sb.append(COIN_NUMBER_FORMAT(coin, changes.get(coin)));
+        }
+        sb.append(BLANK_LINE);
+        System.out.println(sb);
     }
 }

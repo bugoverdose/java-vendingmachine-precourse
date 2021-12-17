@@ -14,4 +14,6 @@ public class OutputMessages {
     public static String SHOW_CUSTOMER_MONEY_LEFT(int customerMoney) {
         return "투입 금액: " + customerMoney + "원";
     }
+
+    public static String CHANGES = "잔돈" + BLANK_LINE;
 }
