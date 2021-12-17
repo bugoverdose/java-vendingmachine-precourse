@@ -2,6 +2,7 @@ package utils;
 
 import static constants.ExceptionMessages.*;
 import static constants.SystemConstant.*;
+import static utils.IntInputValidator.validateIntInput;
 
 import domain.ProductRepository;
 
@@ -18,8 +19,13 @@ public class MenuInputValidator {
 
         String[] infos = productInfo.split(COMMA);
         validateUniqueProductName(infos[NAME_IDX]);
+        String priceInput = infos[PRICE_IDX];
+        String stockInput = infos[STOCK_IDX];
+
+        validateIntInput(priceInput);
+        validateIntInput(stockInput);
+
         int price = Integer.parseInt(infos[PRICE_IDX]);
-        int stock = Integer.parseInt(infos[STOCK_IDX]);
     }
 
     private static void validateUniqueProductName(String productName) {
