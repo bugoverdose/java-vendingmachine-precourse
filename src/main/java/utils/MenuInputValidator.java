@@ -30,12 +30,27 @@ public class MenuInputValidator {
     }
 
     private static void validatePriceInput(String priceInput) {
-        validateIntInput(priceInput);
+        validateMoneyInput(priceInput);
         validateMinimumPrice(Integer.parseInt(priceInput));
     }
 
     private static void validateStockInput(String stockInput) {
-        int stock = validateIntType(stockInput);
-        validateNotNegative(stock);
+        int stock = validateStockIntType(stockInput);
+        validateStockNotNegative(stock);
+        validateMoneyNotNegative(stock);
+    }
+
+    private static int validateStockIntType(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (Exception e) {
+            throw new IllegalArgumentException(STOCK_NOT_INT_TYPE_EXCEPTION);
+        }
+    }
+
+    private static void validateStockNotNegative(int input) {
+        if (input < 0) {
+            throw new IllegalArgumentException(STOCK_NEGATIVE_INT_EXCEPTION);
+        }
     }
 }

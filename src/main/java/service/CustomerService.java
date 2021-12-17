@@ -1,6 +1,6 @@
 package service;
 
-import static utils.IntInputValidator.validateIntInput;
+import static utils.IntInputValidator.validateMoneyInput;
 import static utils.PurchaseValidator.*;
 import static view.InputView.*;
 import static view.OutputView.printChanges;
@@ -34,7 +34,7 @@ public class CustomerService {
     private int getValidCustomerMoneyInput() {
         try {
             String input = requestCustomerMoneyInput();
-            validateIntInput(input);
+            validateMoneyInput(input);
             return Integer.parseInt(input);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());

@@ -2,7 +2,7 @@ package service;
 
 import domain.CoinRepository;
 
-import static utils.IntInputValidator.validateIntInput;
+import static utils.IntInputValidator.validateMoneyInput;
 import static view.InputView.requestVendingMachineMoneyInput;
 import static view.OutputView.printVendingMachineCoins;
 
@@ -17,7 +17,7 @@ public class StoredMoneyService {
     private int getValidVendingMachineMoneyInput() {
         try {
             String input = requestVendingMachineMoneyInput();
-            validateIntInput(input);
+            validateMoneyInput(input);
             return Integer.parseInt(input);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());

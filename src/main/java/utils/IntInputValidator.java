@@ -6,13 +6,13 @@ import static constants.SystemConstant.MINIMUM_PRICE;
 
 public class IntInputValidator {
 
-    public static void validateIntInput(String input) {
-        int intInput = validateIntType(input);
-        validateNotNegative(intInput);
+    public static void validateMoneyInput(String input) {
+        int intInput = validateMoneyIntType(input);
+        validateMoneyNotNegative(intInput);
         validateNoOneWon(intInput);
     }
 
-    public static int validateIntType(String input) {
+    public static int validateMoneyIntType(String input) {
         try {
             return Integer.parseInt(input);
         } catch (Exception e) {
@@ -20,7 +20,7 @@ public class IntInputValidator {
         }
     }
 
-    public static void validateNotNegative(int input) {
+    public static void validateMoneyNotNegative(int input) {
         if (input < 0) {
             throw new IllegalArgumentException(NEGATIVE_INT_EXCEPTION);
         }
