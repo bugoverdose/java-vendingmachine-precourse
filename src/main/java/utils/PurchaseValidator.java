@@ -10,6 +10,7 @@ public class PurchaseValidator {
     public static void validatePurchaseInput(String input, int customerMoney) {
         Product product = validatePurchaseNameInput(input);
         validateEnoughMoney(product, customerMoney);
+        validateEnoughStock(product);
     }
 
     private static Product validatePurchaseNameInput(String input) {
@@ -23,6 +24,12 @@ public class PurchaseValidator {
     private static void validateEnoughMoney(Product product, int customerMoney) {
         if (product.getPrice() > customerMoney) {
             throw new IllegalArgumentException(NOT_ENOUGH_MONEY_EXCEPTION);
+        }
+    }
+
+    private static void validateEnoughStock(Product product) {
+        if (product.getStock() == 0) {
+            throw new IllegalArgumentException(NO_STOCK_EXCEPTION);
         }
     }
 }
