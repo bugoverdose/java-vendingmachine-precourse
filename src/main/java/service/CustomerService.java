@@ -15,7 +15,7 @@ public class CustomerService {
         setCustomerMoney();
 
         while (hasEnoughMoney()) {
-
+            sellProduct();
         }
     }
 
@@ -32,5 +32,15 @@ public class CustomerService {
             return true;
         }
         return false;
+    }
+
+    private void sellProduct() {
+        String productName = requestCustomerPurchaseInput();
+        for (Product product : ProductRepository.getMenu()) {
+            if (product.getName().equals(productName)) {
+                product.decreaseStock();
+                customerMoney -= product.getPrice();
+            }
+        }
     }
 }

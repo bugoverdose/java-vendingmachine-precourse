@@ -22,7 +22,7 @@ public class InputView {
     }
 
     public static String requestCustomerPurchaseInput() {
-        System.out.println(REQUEST_CUSTOMER_MONEY_INPUT);
+        System.out.println(REQUEST_PRODUCT_NAME_INPUT);
         return Console.readLine();
     }
 }
