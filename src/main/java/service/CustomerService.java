@@ -8,6 +8,7 @@ import domain.ProductRepository;
 import java.util.TreeMap;
 
 import static utils.InputValidator.validateIntInput;
+import static utils.PurchaseValidator.validatePurchaseInput;
 import static view.InputView.*;
 import static view.OutputView.printChanges;
 import static view.OutputView.printCustomerMoneyLeft;
@@ -63,12 +64,10 @@ public class CustomerService {
 
     private void sellProduct() {
         String productName = requestCustomerPurchaseInput();
-        for (Product product : ProductRepository.getMenu()) {
-            if (product.getName().equals(productName)) {
-                product.decreaseStock();
-                customerMoney -= product.getPrice();
-            }
-        }
+        validatePurchaseInput(productName);
+        Product product = ProductRepository.findProductByName(productName);
+        product.decreaseStock();
+        customerMoney -= product.getPrice();
     }
 
     private void returnChanges() {
