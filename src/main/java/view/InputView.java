@@ -15,4 +15,9 @@ public class InputView {
         System.out.println(REQUEST_MENU_INPUT);
         return Console.readLine();
     }
+
+    public static String requestCustomerMoneyInput() {
+        System.out.println(REQUEST_CUSTOMER_MONEY_INPUT);
+        return Console.readLine();
+    }
 }
