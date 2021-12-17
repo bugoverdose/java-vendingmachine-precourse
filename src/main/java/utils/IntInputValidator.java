@@ -3,7 +3,7 @@ package utils;
 import static constants.ExceptionMessages.*;
 import static constants.SystemConstant.MINIMUM_COIN_AMOUNT;
 
-public class InputValidator {
+public class IntInputValidator {
 
     public static void validateIntInput(String input) {
         int intInput = validateIntType(input);

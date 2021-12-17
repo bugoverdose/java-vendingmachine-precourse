@@ -1,6 +1,6 @@
 package service;
 
-import static utils.InputValidator.validateIntInput;
+import static utils.IntInputValidator.validateIntInput;
 import static utils.PurchaseValidator.*;
 import static view.InputView.*;
 import static view.OutputView.printChanges;

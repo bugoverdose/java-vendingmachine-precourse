@@ -2,7 +2,7 @@ package service;
 
 import domain.CoinRepository;
 
-import static utils.InputValidator.validateIntInput;
+import static utils.IntInputValidator.validateIntInput;
 import static view.InputView.requestVendingMachineMoneyInput;
 import static view.OutputView.printVendingMachineCoins;
 
