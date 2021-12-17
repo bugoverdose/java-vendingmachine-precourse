@@ -63,6 +63,7 @@ public class CustomerService {
 
             changes.put(coin, coinNumber);
             customerMoney -= coin.getAmount() * coinNumber;
+            CoinRepository.subtractCoin(coin, coinNumber);
         }
 
         return changes;
