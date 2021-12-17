@@ -11,7 +11,7 @@ public class IntInputValidator {
         validateNoOneWon(intInput);
     }
 
-    private static int validateIntType(String input) {
+    public static int validateIntType(String input) {
         try {
             return Integer.parseInt(input);
         } catch (Exception e) {
@@ -19,7 +19,7 @@ public class IntInputValidator {
         }
     }
 
-    private static void validateNotNegative(int input) {
+    public static void validateNotNegative(int input) {
         if (input < 0) {
             throw new IllegalArgumentException(NEGATIVE_INT_EXCEPTION);
         }
