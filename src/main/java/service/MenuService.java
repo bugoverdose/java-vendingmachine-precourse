@@ -1,16 +1,18 @@
 package service;
 
+import static constants.SystemConstant.*;
+import static utils.MenuInputValidator.validateMenuInput;
+import static view.InputView.requestMenuInput;
+
 import domain.Product;
 import domain.ProductRepository;
-
-import static constants.SystemConstant.*;
-import static view.InputView.requestMenuInput;
 
 public class MenuService {
 
     public void run() {
         try {
             String menuInput = requestMenuInput();
+            validateMenuInput(menuInput);
             initMenu(menuInput);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
