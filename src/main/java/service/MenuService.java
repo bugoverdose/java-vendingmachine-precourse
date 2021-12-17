@@ -8,8 +8,17 @@ import static view.InputView.requestMenuInput;
 
 public class MenuService {
 
-    public void initMenu() {
-        String menuInput = requestMenuInput();
+    public void run() {
+        try {
+            String menuInput = requestMenuInput();
+            initMenu(menuInput);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            run();
+        }
+    }
+
+    private void initMenu(String menuInput) {
         for (String productInfos : menuInput.split(SEMICOLON)) {
             productInfos = productInfos.substring(1, productInfos.length()-1);
 

@@ -12,7 +12,7 @@ public class VendingMachineController {
 
     public void run() {
         storedMoneyService.run();
-        menuService.initMenu();
+        menuService.run();
         customerService.run();
     }
 }
