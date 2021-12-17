@@ -18,9 +18,16 @@ public class MenuInputValidator {
         productInfo = productInfo.substring(1, productInfo.length()-1);
 
         String[] infos = productInfo.split(COMMA);
+        validateThreeInfos(infos);
         validateUniqueProductName(infos[NAME_IDX]);
         validatePriceInput(infos[PRICE_IDX]);
         validateStockInput(infos[STOCK_IDX]);
+    }
+
+    private static void validateThreeInfos(String[] infos) {
+        if (infos.length != 3) {
+            throw new IllegalArgumentException(NOT_THREE_INFO_EXCEPTION);
+        }
     }
 
     private static void validateUniqueProductName(String productName) {
