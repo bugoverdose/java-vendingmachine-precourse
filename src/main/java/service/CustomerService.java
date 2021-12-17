@@ -20,7 +20,7 @@ public class CustomerService {
         setCustomerMoney();
 
         while (hasEnoughMoney()) {
-            sellProduct();
+            getPurchaseInput();
         }
 
         returnChanges();
@@ -50,6 +50,15 @@ public class CustomerService {
             return true;
         }
         return false;
+    }
+
+    private void getPurchaseInput() {
+        try {
+            sellProduct();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            getPurchaseInput();
+        }
     }
 
     private void sellProduct() {
