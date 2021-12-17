@@ -18,6 +18,6 @@ public class VendingMachineController {
         printVendingMachineCoins();
 
         productService.initMenu();
-        customerService.setCustomerMoney();
+        customerService.run();
     }
 }

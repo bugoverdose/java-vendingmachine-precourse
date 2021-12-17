@@ -17,4 +17,8 @@ public class OutputView {
         sb.append(BLANK_LINE);
         System.out.println(sb);
     }
+
+    public static void printCustomerMoneyLeft(int customerMoney) {
+        System.out.println(SHOW_CUSTOMER_MONEY_LEFT(customerMoney));
+    }
 }
