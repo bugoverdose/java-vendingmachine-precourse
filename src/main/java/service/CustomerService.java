@@ -64,7 +64,8 @@ public class CustomerService {
 
     private void sellProduct() {
         String productName = requestCustomerPurchaseInput();
-        validatePurchaseInput(productName);
+        validatePurchaseInput(productName, customerMoney);
+
         Product product = ProductRepository.findProductByName(productName);
         product.decreaseStock();
         customerMoney -= product.getPrice();
