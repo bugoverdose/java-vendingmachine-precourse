@@ -23,9 +23,6 @@ public class CoinRepository {
             coins.put(coin, 0);
         }
 
-        while (vendingMachineMoney > MINIMUM_COIN_AMOUNT) {
-            Coin newCoin = pickRandomNewCoin(vendingMachineMoney);
-            addCoin(newCoin);
-        }
+        generateVendingMachineCoins(vendingMachineMoney);
     }
 }
