@@ -26,7 +26,7 @@ public class MenuInputValidator {
     }
 
     private static void validateBrackets(String input) {
-        if (input.startsWith("[") || input.endsWith("]")) {
+        if (input.startsWith(BRACKET_LEFT) || input.endsWith(BRACKET_RIGHT)) {
             throw new IllegalArgumentException(NO_BRACKETS_EXCEPTION);
         }
     }

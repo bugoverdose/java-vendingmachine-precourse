@@ -6,6 +6,8 @@ public class SystemConstant {
 
     public final static String SEMICOLON = ";";
     public final static String COMMA = ",";
+    public final static String BRACKET_LEFT = "[";
+    public final static String BRACKET_RIGHT = "]";
 
     public final static int MINIMUM_COIN_AMOUNT = Coin.COIN_10.getAmount();
     public final static int MINIMUM_PRICE = Coin.COIN_100.getAmount();
