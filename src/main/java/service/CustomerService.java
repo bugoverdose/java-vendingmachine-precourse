@@ -79,6 +79,7 @@ public class CustomerService {
         for (Coin coin : Coin.values()) {
             if (coin.getAmount() > customerMoney) continue;
             int coinNumber = calculateMaxCoinNumber(coin);
+            if (coinNumber == 0) continue;
 
             changes.put(coin, coinNumber);
             customerMoney -= coin.getAmount() * coinNumber;
