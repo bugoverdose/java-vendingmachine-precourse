@@ -7,6 +7,7 @@ import domain.ProductRepository;
 
 import java.util.TreeMap;
 
+import static utils.InputValidator.validateIntInput;
 import static view.InputView.*;
 import static view.OutputView.printChanges;
 import static view.OutputView.printCustomerMoneyLeft;
@@ -26,7 +27,18 @@ public class CustomerService {
     }
 
     private void setCustomerMoney() {
-        this.customerMoney = Integer.parseInt(requestCustomerMoneyInput());
+        this.customerMoney = getValidCustomerMoneyInput();
+    }
+
+    private int getValidCustomerMoneyInput() {
+        try {
+            String input = requestCustomerMoneyInput();
+            validateIntInput(input);
+            return Integer.parseInt(input);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return getValidCustomerMoneyInput();
+        }
     }
 
     private boolean hasEnoughMoney() {
