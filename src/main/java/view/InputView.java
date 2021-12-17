@@ -10,4 +10,9 @@ public class InputView {
         System.out.println(REQUEST_VENDING_MACHINE_MONEY_INPUT);
         return Console.readLine();
     }
+
+    public static String requestMenuInput() {
+        System.out.println(REQUEST_MENU_INPUT);
+        return Console.readLine();
+    }
 }
